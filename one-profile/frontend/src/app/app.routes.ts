@@ -1,3 +1,15 @@
 import { Routes } from '@angular/router';
+import { HomeScreenComponent } from './modules/home/screens/home-screen/home-screen.component';
 
-export const appRoutes: Routes = [];
+export const appRoutes: Routes = [
+    {
+        path: '',
+        redirectTo: 'home',
+        pathMatch: 'full'
+    },
+    {
+        path: 'home',
+        // loadChildren: () => import('./modules/home/home.module').then(m => m.HomeModule)
+        component: HomeScreenComponent
+    }
+];
