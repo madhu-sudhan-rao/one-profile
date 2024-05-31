@@ -4,12 +4,12 @@ import { HomeScreenComponent } from './modules/home/screens/home-screen/home-scr
 export const appRoutes: Routes = [
     {
         path: '',
-        redirectTo: 'home',
+        redirectTo: 'home/features',
         pathMatch: 'full'
     },
     {
         path: 'home',
-        // loadChildren: () => import('./modules/home/home.module').then(m => m.HomeModule)
-        component: HomeScreenComponent
+        loadChildren: () => import('./modules/home/home.module').then(m => m.HomeModule)
+        // component: HomeScreenComponent
     }
 ];

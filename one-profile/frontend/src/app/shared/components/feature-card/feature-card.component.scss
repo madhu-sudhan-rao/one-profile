@@ -1,0 +1,12 @@
+.feature-card {
+    max-width: 200px;
+    
+    mat-card-header {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        
+    }
+
+}

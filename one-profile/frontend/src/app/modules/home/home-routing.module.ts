@@ -5,19 +5,19 @@ import { FeaturesComponent } from './components/features/features.component';
 
 const routes: Routes = [
   {
-    path: 'features',
-    component: FeaturesComponent,
-    // children: [
-    //   {
-    //     path: '',
-    //     redirectTo: 'features',
+    path: '',
+    component: HomeScreenComponent,
+    children: [
+      {
+        path: '',
+        redirectTo: 'features',
         pathMatch: 'full'
-    //   },
-    //   {
-    //     path: 'features',
-    //     component: FeaturesComponent
-    //   }
-    // ]
+      },
+      {
+        path: 'features',
+        component: FeaturesComponent
+      }
+    ]
   }
 ];
 
