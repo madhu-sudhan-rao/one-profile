@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-features',
@@ -6,5 +7,11 @@ import { Component } from '@angular/core';
   styleUrl: './features.component.scss'
 })
 export class FeaturesComponent {
+
+  constructor(private router: Router){}
+
+  navigateToPage() {
+    this.router.navigate(['/features/profile']);
+  }
 
 }

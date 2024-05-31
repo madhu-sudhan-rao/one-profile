@@ -3,13 +3,15 @@ import { NgModule } from '@angular/core';
 import { MaterialUiModule } from '../ui-modules/material-ui/material-ui.module';
 import { HeaderComponent } from './header/header.component';
 import { FeatureCardComponent } from './feature-card/feature-card.component';
+import { ButtonComponent } from './button/button.component';
 
 
 
 @NgModule({
   declarations: [
     HeaderComponent,
-    FeatureCardComponent
+    FeatureCardComponent,
+    ButtonComponent
   ],
   imports: [
     CommonModule,
@@ -17,7 +19,8 @@ import { FeatureCardComponent } from './feature-card/feature-card.component';
   ],
   exports: [
     HeaderComponent,
-    FeatureCardComponent
+    FeatureCardComponent,
+    ButtonComponent
   ]
 })
 export class ComponentModule { }

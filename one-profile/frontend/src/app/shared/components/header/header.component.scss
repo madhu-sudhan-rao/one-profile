@@ -1,6 +1,6 @@
 ::ng-deep {
     .mat-toolbar-single-row {
-        background: #070F2B !important;
+        background: #040519 !important;
         display: flex;
         box-sizing: border-box;
         padding: 0 16px;
@@ -8,6 +8,7 @@
         flex-direction: row;
         align-items: center;
         white-space: nowrap;
+        border-bottom: .001px solid rgba(118, 118, 118, 0.312);
 
         span.app-title {
             color: #fff;
