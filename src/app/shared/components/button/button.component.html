@@ -12,7 +12,7 @@
   </ng-container>
 
   <ng-container *ngIf="fullButton">
-    <button mat-flat-button>
+    <button mat-flat-button (click)="onClick()">
       <div *ngIf="hasIcon">
         <mat-icon>{{ buttonIcon }}</mat-icon>
       </div>

@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
-import { SnackbarService } from '../../../../../shared/services/snackbar.service';
+import { SnackbarService } from '../../../../shared/services/snackbar.service';
+import { BottomSheetService } from '../../../../shared/services/bottom-sheet.service';
+import { BottomSheetComponent } from '../bottom-sheet/bottom-sheet.component';
+import { UtilityService } from '../../../../shared/services/utility.service';
 
 interface UserDetail {
   icon: string;
@@ -35,15 +38,13 @@ export class DetailsComponent {
     ]
   };
 
-  constructor(private _snackBarService: SnackbarService){}
+  constructor(private utilityService: UtilityService, private _bottomSheetService: BottomSheetService){}
 
   copyURL(url: string) {
-    const textArea = document.createElement("textarea");
-    textArea.textContent = url;
-    document.body.appendChild(textArea);
-    textArea.select();
-    document.execCommand("copy");
-    document.body.removeChild(textArea);
-    this._snackBarService.openSnackBar("Link copied!")
+    this.utilityService.copyToClipboard(url);
+  }
+
+  openShareOptions() {
+    this._bottomSheetService.openBottomSheet(BottomSheetComponent)    
   }
 }
