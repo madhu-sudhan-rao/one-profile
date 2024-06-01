@@ -73,8 +73,17 @@
 ::ng-deep {
 
     .row-icon {
-        // border: 1px solid white;
         display: flex;
+
+        span {
+            color: #44474e;
+
+            .pi {
+                padding-left: 4px;
+                padding-top: 5px;
+            }
+
+        }
 
         .mat-icon {
             font-size: 1.5rem;

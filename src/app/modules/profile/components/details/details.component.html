@@ -20,7 +20,8 @@
     <div class="user-detail-row" *ngFor="let detail of user.details">
         <div class="row-detail">
             <div class="row-icon">
-                <mat-icon>{{ detail.icon }}</mat-icon>
+              <span><i [classList]="detail.icon"></i></span>
+              <mat-icon *ngIf="detail.icon === 'snapchat'">{{ detail.icon }}</mat-icon>
             </div>
             <div class="row-value">
                 <div>{{ detail.value }}</div>
