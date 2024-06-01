@@ -5,6 +5,7 @@ import { HeaderComponent } from './header/header.component';
 import { FeatureCardComponent } from './feature-card/feature-card.component';
 import { ButtonComponent } from './button/button.component';
 import { AlertMessageComponent } from './alert-message/alert-message.component';
+import { ListComponent } from './list/list.component';
 
 
 
@@ -13,7 +14,8 @@ import { AlertMessageComponent } from './alert-message/alert-message.component';
     HeaderComponent,
     FeatureCardComponent,
     ButtonComponent,
-    AlertMessageComponent
+    AlertMessageComponent,
+    ListComponent
   ],
   imports: [
     CommonModule,
@@ -23,7 +25,8 @@ import { AlertMessageComponent } from './alert-message/alert-message.component';
     HeaderComponent,
     FeatureCardComponent,
     ButtonComponent,
-    AlertMessageComponent
+    AlertMessageComponent,
+    ListComponent
   ]
 })
 export class ComponentModule { }

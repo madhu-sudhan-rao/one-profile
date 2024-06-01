@@ -4,13 +4,15 @@ import { CommonModule } from '@angular/common';
 import { ProfileRoutingModule } from './profile-routing.module';
 import { SharedModule } from '../../shared/shared.module';
 import { ProfileScreenComponent } from './screens/profile-screen/profile-screen.component';
-import { DetailsComponent } from './screens/components/details/details.component';
+import { BottomSheetComponent } from './components/bottom-sheet/bottom-sheet.component';
+import { DetailsComponent } from './components/details/details.component';
 
 
 @NgModule({
   declarations: [
     ProfileScreenComponent,
-    DetailsComponent
+    DetailsComponent,
+    BottomSheetComponent
   ],
   imports: [
     CommonModule,
