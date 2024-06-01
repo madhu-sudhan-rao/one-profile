@@ -11,7 +11,7 @@ export class FeaturesComponent {
   constructor(private router: Router){}
 
   navigateToPage() {
-    this.router.navigate(['/features/profile']);
+    this.router.navigate(['/profile']);
   }
 
 }

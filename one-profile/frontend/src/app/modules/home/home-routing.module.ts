@@ -15,7 +15,10 @@ const routes: Routes = [
       },
       {
         path: 'features',
-        component: FeaturesComponent
+        component: FeaturesComponent,
+        children: [
+   
+        ]
       }
     ]
   }

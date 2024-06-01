@@ -20,4 +20,26 @@
             box-shadow: none;
         }
     }
+
+    .share-button {
+        .mat-mdc-unelevated-button:not(:disabled) {
+            background-color: #040519;
+            border: 1px solid rgb(53, 53, 53);
+
+            &:hover {
+                background: #05061a;
+            }
+        }
+    }
+
+    .action-button {
+        .mat-icon {
+            // color: #b5b5b5;
+            // font-size: 1rem;
+
+            &:hover {
+                color: #ffffff !important;
+            }
+        }
+    }
 }

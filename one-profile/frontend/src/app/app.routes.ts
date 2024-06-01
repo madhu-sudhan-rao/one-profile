@@ -11,5 +11,9 @@ export const appRoutes: Routes = [
         path: 'home',
         loadChildren: () => import('./modules/home/home.module').then(m => m.HomeModule)
         // component: HomeScreenComponent
-    }
+    },
+    {
+        path: 'profile',
+        loadChildren: () => import('./modules/profile/profile.module').then(m => m.ProfileModule)
+      }
 ];
