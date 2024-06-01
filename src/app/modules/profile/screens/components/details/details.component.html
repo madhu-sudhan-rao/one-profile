@@ -1,0 +1,49 @@
+<div class="details-page">
+  <div class="details-card">
+    <div class="card-header">
+        <div class="usernames">
+            <div class="user-real-name">{{ user.realName }}</div>
+            <div class="user-name">{{ user.userName }}</div>
+        </div>
+        <div class="share-button">
+          <app-button
+            [fullButton]="true"
+            buttonText="Share"
+            buttonIcon="share"
+            styleClass="share-button"
+          ></app-button>
+        </div>
+    </div>
+  </div>
+  <div class="user-details">
+    <div class="user-detail-row" *ngFor="let detail of user.details">
+        <div class="row-detail">
+            <div class="row-icon">
+                <mat-icon>{{ detail.icon }}</mat-icon>
+            </div>
+            <div class="row-value">
+                <div>{{ detail.value }}</div>
+            </div>
+        </div>
+        <div class="row-actions">
+        <div *ngIf="detail.url">
+                <a [href]="detail.url" target="_blank">
+                    <app-button
+                      [actionButton]="true"
+                      iconName="open_in_new"
+                      styleClass="action-button"
+                    ></app-button>
+                  </a>
+        </div>
+            <div>
+                <app-button
+                    [actionButton]="true"
+                    iconName="content_copy"
+                    styleClass="action-button"
+                    (onButtonClick)="copyURL(detail.url || detail.value)"
+                ></app-button>
+            </div>
+        </div>
+    </div>
+  </div>
+</div>

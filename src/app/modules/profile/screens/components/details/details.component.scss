@@ -1,0 +1,84 @@
+.details-page {
+    color: #fff;
+    // border: 1px solid white;
+    padding: 1rem;
+
+    .details-card {
+        border: 1px solid rgb(53, 53, 53);
+        padding: 1.25rem;
+        border-radius: 20px;
+        max-width: 100%;
+    }
+}
+
+.card-header {
+    background-color: var(--bg-dark-blue);
+    display: flex;
+    justify-content: space-between;
+
+    .usernames {
+        display: flex;
+        flex-direction: column;
+
+        .user-real-name {
+            font-size: 1.05rem;
+            font-family: 'Lexend';
+            font-weight: 500;
+        }
+
+        .user-name {
+            font-size: 0.85rem;
+            color: #b5b5b5;
+        }
+    }
+}
+
+.user-details {
+    padding: 1rem 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    
+    .user-detail-row {
+        // border: 1px solid white;
+        max-width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: .5rem .5rem;
+        background: #6a6a6a20;
+        border-radius: 5px;
+        
+
+    }
+
+    .row-detail {
+        display: flex;
+        gap: 1rem;
+
+        .row-value {
+            font-size: .81rem;
+            font-family: 'Work Sans';
+        }
+    }
+
+    .row-actions {
+        display: flex;
+        gap: .81rem;
+    }
+
+}
+
+::ng-deep {
+
+    .row-icon {
+        // border: 1px solid white;
+        display: flex;
+
+        .mat-icon {
+            font-size: 1.5rem;
+            color: #44474e;
+        }
+    }
+}
