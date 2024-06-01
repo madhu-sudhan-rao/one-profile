@@ -1,20 +1,8 @@
 import { Component } from '@angular/core';
-import { SnackbarService } from '../../../../shared/services/snackbar.service';
 import { BottomSheetService } from '../../../../shared/services/bottom-sheet.service';
-import { BottomSheetComponent } from '../bottom-sheet/bottom-sheet.component';
 import { UtilityService } from '../../../../shared/services/utility.service';
-
-interface UserDetail {
-  icon: string;
-  value: string;
-  url?: string;
-}
-interface User {
-  id: string;
-  realName: string;
-  userName: string;
-  details: UserDetail[];
-}
+import { BottomSheetComponent } from '../bottom-sheet/bottom-sheet.component';
+import { User } from '../../models/user.model';
 
 @Component({
   selector: 'app-details',
@@ -38,13 +26,13 @@ export class DetailsComponent {
     ]
   };
 
-  constructor(private utilityService: UtilityService, private _bottomSheetService: BottomSheetService){}
+  constructor(private utilityService: UtilityService, private bottomSheetService: BottomSheetService){}
 
   copyURL(url: string) {
     this.utilityService.copyToClipboard(url);
   }
 
   openShareOptions() {
-    this._bottomSheetService.openBottomSheet(BottomSheetComponent)    
+    this.bottomSheetService.openBottomSheet(BottomSheetComponent)    
   }
 }
