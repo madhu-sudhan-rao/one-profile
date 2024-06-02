@@ -8,6 +8,9 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatBottomSheetModule} from '@angular/material/bottom-sheet';
 import {MatListModule} from '@angular/material/list';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatMenuModule} from '@angular/material/menu';
+
 
 const MATERIAL_UI_COMPONENTS : any[]= [
   MatButtonModule,
@@ -17,7 +20,9 @@ const MATERIAL_UI_COMPONENTS : any[]= [
   MatTooltipModule,
   MatSnackBarModule,
   MatBottomSheetModule,
-  MatListModule
+  MatListModule,
+  MatSidenavModule,
+  MatMenuModule
 ]
 
 
