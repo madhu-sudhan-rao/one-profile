@@ -6,6 +6,8 @@
         matInput
         [placeholder]="placeholder"
         [formControlName]="controlName"
+        [maxlength]="maxLength"
+        (keypress)="numbersOnly ? acceptNumbersOnly($event) : null"
       />
       @if (suffixIcon) {
       <mat-icon matSuffix (click)="emitSuffixAction(controlName)">{{
@@ -13,9 +15,7 @@
       }}</mat-icon>
       } @if (prefixIcon) {
 
-      <mat-icon matPrefix>{{
-        prefixIcon
-      }}</mat-icon>
+      <mat-icon matPrefix>{{ prefixIcon }}</mat-icon>
       }
     </mat-form-field>
   </div>

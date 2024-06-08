@@ -1,32 +1,47 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { BottomSheetService } from '../../../../shared/services/bottom-sheet.service';
 import { UtilityService } from '../../../../shared/services/utility.service';
 import { BottomSheetComponent } from '../bottom-sheet/bottom-sheet.component';
-import { User } from '../../models/user.model';
+import { User, UserDetails } from '../../models/user.model';
 
 @Component({
   selector: 'app-details',
   templateUrl: './details.component.html',
   styleUrl: './details.component.scss'
 })
-export class DetailsComponent {
+export class DetailsComponent implements OnInit{
   user: User = {
     id: '9621f574-8277-4596-9c65-4bf00a75af3b',
-    realName: 'Madhu Sudhan Rao',
-    userName: '@madhu._.p',
-    details: [
-      { icon: 'pi pi-envelope', value: 'madhuspediredla@gmail.com' },
-      { icon: 'pi pi-phone', value: '7382036544' },
-      { icon: 'pi pi-instagram', value: 'Instagram', url: 'https://instagram.com/madhuu._.p?igsh=ZmpjdWtqOGlhcWp5&utm_source=qr'},
-      { icon: 'pi pi-github', value: 'Github', url: 'https://github.com/madhu-sudhan-rao'},
-      { icon: 'pi pi-linkedin', value: 'Linkedin', url: 'https://www.linkedin.com/in/madhu-sudhan-rao-pediredla-18588a1a3/'},
-      { icon: 'pi pi-twitter', value: 'Twitter', url: 'https://twitter.com/madhu_pediredla'},
-      { icon: 'snapchat', value: 'Snapchat', url: 'https://snapchat.com/add/madhu5815?share_id=ycdHba8OS3-g00WZoXr4fA&locale=en_IN'},
-      
-    ]
+    realName: '',
+    userName: '',
+    details: []
   };
 
   constructor(private utilityService: UtilityService, private bottomSheetService: BottomSheetService){}
+
+  ngOnInit(): void {
+    const userDetailsString = localStorage.getItem('user');
+    if (userDetailsString) {
+      try {
+        const userDetails = JSON.parse(userDetailsString) as UserDetails;
+        this.user.realName = userDetails.fullName;
+        this.user.userName = userDetails.username
+        this.user.details = [
+          { icon: 'pi pi-envelope', value: userDetails.email },
+          { icon: 'pi pi-phone', value: userDetails.mobile },
+          { icon: 'pi pi-instagram', value: 'Instagram', url: userDetails.instagram },
+          { icon: 'pi pi-github', value: 'Github', url: userDetails.github },
+          { icon: 'pi pi-linkedin', value: 'Linkedin', url: userDetails.linkedin },
+          { icon: 'pi pi-twitter', value: 'Twitter', url: userDetails.twitter },
+          { icon: 'snapchat', value: 'Snapchat', url: userDetails.snapchat }
+        ];
+      } catch (error) {
+        console.error('Failed to parse user details: ', error);
+      }
+    } else {
+      console.error('User details not found in localStorage');
+    }
+  }
 
   copyURL(url: string) {
     this.utilityService.copyToClipboard(url);

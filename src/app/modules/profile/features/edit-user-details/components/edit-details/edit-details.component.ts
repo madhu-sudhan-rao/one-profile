@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Gender } from '../../../../../../core/enums/gender.enum';
 import { UtilityService } from '../../../../../../shared/services/utility.service';
 import { UserDetails } from '../../../../models/user.model';
+import { SnackbarService } from '../../../../../../shared/services/snackbar.service';
 
 @Component({
   selector: 'app-edit-details',
@@ -19,7 +20,7 @@ export class EditDetailsComponent implements OnInit {
 
   userDetailsDto: UserDetails;
 
-  constructor(private fb: FormBuilder, private utilityService: UtilityService) {
+  constructor(private fb: FormBuilder, private utilityService: UtilityService, private snackBarService: SnackbarService) {
     this.detailsForm = this.fb.group({
       fullName: [null, [Validators.minLength(3)]],
       username: [null, [Validators.pattern('^[a-zA-Z0-9_-]{3,15}$')]],
@@ -83,6 +84,7 @@ export class EditDetailsComponent implements OnInit {
   saveChanges() {
     this.updateUserDetails()
     localStorage.setItem('user', JSON.stringify(this.userDetailsDto));
+    this.snackBarService.openSnackBar("Details Updated!")
   }
 
   updateUserDetails(): void {
