@@ -11,6 +11,8 @@ export class TextInputComponent {
   @Input() formGroup!: FormGroup;
   @Input() controlName!: string;
   @Input() placeholder!: string;
+  @Input() maxLength!: number;
+  @Input() numbersOnly: boolean = false;
   @Input() suffixIcon!: string;
   @Input() suffixIconParam!: string;
   @Input() suffixIconAction: () => void = () => {}; // Default function that does nothing
@@ -20,6 +22,14 @@ export class TextInputComponent {
 
   emitSuffixAction(event: any) {
     this.onSuffixIconClick.emit(event)
+  }
+
+  acceptNumbersOnly(event: any) {
+    const charCode = event.which ? event.which : event.keyCode;
+    if (charCode > 31 && (charCode < 48 || charCode > 57)) {
+      return false;
+    }
+    return true;
   }
 
 }

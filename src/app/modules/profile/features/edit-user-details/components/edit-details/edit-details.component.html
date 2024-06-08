@@ -22,6 +22,14 @@
         [controlName]="'email'"
         placeholder="Ex: klausthehybrid01@gmail.com"
       ></app-text-input>
+      <app-text-input
+        label="Mobile"
+        [formGroup]="detailsForm"
+        [controlName]="'mobile'"
+        placeholder="Ex: 1234567890"
+        [numbersOnly]="true"
+        [maxLength]="10"
+      ></app-text-input>
       <div class="double">
         <div>
           <app-select-list
