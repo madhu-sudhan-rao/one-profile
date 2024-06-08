@@ -15,5 +15,9 @@ export const appRoutes: Routes = [
     {
         path: 'profile',
         loadChildren: () => import('./modules/profile/profile.module').then(m => m.ProfileModule)
-      }
+    },
+    {
+        path: 'edit-profile',
+        loadChildren: () => import('./modules/profile/features/edit-user-details/edit-user-details.module').then(m => m.EditUserDetailsModule)
+    }
 ];

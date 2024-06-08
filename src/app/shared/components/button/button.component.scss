@@ -23,11 +23,12 @@
 
     .share-button {
         .mat-mdc-unelevated-button:not(:disabled) {
-            background-color: #040519;
-            border: 1px solid rgb(53, 53, 53);
-
+            background-color: #0029ff;
+            border: 1px solid #0029ff;
+            
             &:hover {
-                background: #05061a;
+                background-color: #0062ff;
+                border: 1px solid #0062ff;
             }
         }
     }

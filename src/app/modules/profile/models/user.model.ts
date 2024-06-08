@@ -10,3 +10,18 @@ export interface UserDetail {
     value: string;
     url?: string;
 }
+
+export interface UserDetails {
+    fullName: string;
+    username: string;
+    email: string;
+    mobile: string;
+    gender: string;
+    birthday: string;
+    instagram: string;
+    twitter: string;
+    snapchat: string;
+    linkedin: string;
+    github: string;
+  }
+  

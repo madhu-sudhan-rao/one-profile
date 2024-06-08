@@ -8,6 +8,14 @@ import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatBottomSheetModule} from '@angular/material/bottom-sheet';
 import {MatListModule} from '@angular/material/list';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import {MatSelectModule} from '@angular/material/select';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+
 
 const MATERIAL_UI_COMPONENTS : any[]= [
   MatButtonModule,
@@ -17,7 +25,14 @@ const MATERIAL_UI_COMPONENTS : any[]= [
   MatTooltipModule,
   MatSnackBarModule,
   MatBottomSheetModule,
-  MatListModule
+  MatListModule,
+  MatSidenavModule,
+  MatMenuModule,
+  MatFormFieldModule,
+  MatInputModule,
+  MatSelectModule,
+  MatDatepickerModule,
+  MatNativeDateModule
 ]
 
 

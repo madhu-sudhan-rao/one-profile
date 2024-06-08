@@ -1,0 +1,103 @@
+<div class="edit-details-page">
+  <section class="data-card">
+    <div class="data-card-header">
+      <span>Personal Data</span>
+    </div>
+    <div class="data-card-body">
+      <app-text-input
+        label="Full Name"
+        [formGroup]="detailsForm"
+        [controlName]="'fullName'"
+        placeholder="Ex: Klaus Mikaelson"
+      ></app-text-input>
+      <app-text-input
+        label="Username"
+        [formGroup]="detailsForm"
+        [controlName]="'username'"
+        placeholder="Ex: theMaker01"
+      ></app-text-input>
+      <app-text-input
+        label="Email"
+        [formGroup]="detailsForm"
+        [controlName]="'email'"
+        placeholder="Ex: klausthehybrid01@gmail.com"
+      ></app-text-input>
+      <div class="double">
+        <div>
+          <app-select-list
+            [options]="genders"
+            [formGroup]="detailsForm"
+            [controlName]="'gender'"
+            label="Gender"
+          ></app-select-list>
+        </div>
+        <div>
+          <app-calendar-input
+            [formGroup]="detailsForm"
+            [controlName]="'birthday'"
+            label="Birthday"
+          ></app-calendar-input>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="data-card">
+    <div class="data-card-header">
+      <span>Socials</span>
+    </div>
+    <div class="data-card-body">
+      <app-text-input
+        label="Instagram"
+        [formGroup]="detailsForm"
+        [controlName]="'instagram'"
+        placeholder="Paste your profile link here"
+        suffixIcon="content_paste"
+        (onSuffixIconClick)="pasteURL($event)"
+      ></app-text-input>
+      <app-text-input
+        label="Github"
+        [formGroup]="detailsForm"
+        [controlName]="'github'"
+        placeholder="Paste your profile link here"
+        suffixIcon="content_paste"
+        (onSuffixIconClick)="pasteURL($event)"
+      ></app-text-input>
+      <app-text-input
+        label="LinkedIn"
+        [formGroup]="detailsForm"
+        [controlName]="'linkedin'"
+        placeholder="Paste your profile link here"
+        suffixIcon="content_paste"
+        (onSuffixIconClick)="pasteURL($event)"
+      ></app-text-input>
+      <app-text-input
+        label="Twitter"
+        [formGroup]="detailsForm"
+        [controlName]="'twitter'"
+        placeholder="Paste your profile link here"
+        suffixIcon="content_paste"
+        (onSuffixIconClick)="pasteURL($event)"
+      ></app-text-input>
+      <app-text-input
+        label="Snapchat"
+        [formGroup]="detailsForm"
+        [controlName]="'snapchat'"
+        placeholder="Paste your profile link here"
+        suffixIcon="content_paste"
+        (onSuffixIconClick)="pasteURL($event)"
+      ></app-text-input>
+    </div>
+  </section>
+  <section class="actions-row">
+    <div class="share-button">
+        <app-button
+          [fullButton]="true"
+          buttonText="Save"
+          buttonIcon="check"
+          styleClass="share-button"
+          (onButtonClick)="saveChanges()"
+        ></app-button>
+      </div>
+  </section>
+</div>
