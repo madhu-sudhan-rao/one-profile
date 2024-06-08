@@ -1,5 +1,21 @@
+
 <div class="details-page">
-  <div class="details-card">
+  @if(noDetailsView) {
+    <ng-container>
+      <div class="no-data-card">
+
+          <div class="empty-text">Looks like you haven't added your details...</div>
+        <div class="add-details-button">
+          <app-button
+            [buttonText]="'Add Details'"
+            [fullButton]="true"
+            (onButtonClick)="addDetails()"
+          ></app-button>
+        </div>
+      </div>
+    </ng-container>
+  }
+  <div class="details-card" *ngIf="!noDetailsView">
     <div class="card-header">
         <div class="usernames">
             <div class="user-real-name">{{ user.realName }}</div>

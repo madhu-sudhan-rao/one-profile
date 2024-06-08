@@ -3,6 +3,7 @@ import { BottomSheetService } from '../../../../shared/services/bottom-sheet.ser
 import { UtilityService } from '../../../../shared/services/utility.service';
 import { BottomSheetComponent } from '../bottom-sheet/bottom-sheet.component';
 import { User, UserDetails } from '../../models/user.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-details',
@@ -16,8 +17,9 @@ export class DetailsComponent implements OnInit{
     userName: '',
     details: []
   };
+  noDetailsView: boolean = false;
 
-  constructor(private utilityService: UtilityService, private bottomSheetService: BottomSheetService){}
+  constructor(private utilityService: UtilityService, private bottomSheetService: BottomSheetService, private router: Router){}
 
   ngOnInit(): void {
     const userDetailsString = localStorage.getItem('user');
@@ -35,11 +37,14 @@ export class DetailsComponent implements OnInit{
           { icon: 'pi pi-twitter', value: 'Twitter', url: userDetails.twitter },
           { icon: 'snapchat', value: 'Snapchat', url: userDetails.snapchat }
         ];
+        this.noDetailsView = false;
       } catch (error) {
         console.error('Failed to parse user details: ', error);
       }
     } else {
       console.error('User details not found in localStorage');
+      this.noDetailsView = true;
+
     }
   }
 
@@ -49,5 +54,9 @@ export class DetailsComponent implements OnInit{
 
   openShareOptions() {
     this.bottomSheetService.openBottomSheet(BottomSheetComponent)    
+  }
+
+  addDetails() {
+    this.router.navigate(['/edit-profile']);
   }
 }
