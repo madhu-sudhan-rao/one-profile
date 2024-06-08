@@ -4,7 +4,7 @@
     padding: 1rem;
 
     .details-card {
-        border: 1px solid rgb(53, 53, 53);
+        border: 1px solid #ededed;
         padding: 1.25rem;
         border-radius: 20px;
         max-width: 100%;
@@ -12,7 +12,7 @@
 }
 
 .card-header {
-    background-color: var(--bg-dark-blue);
+    background-color: none;
     display: flex;
     justify-content: space-between;
 
@@ -24,6 +24,7 @@
             font-size: 1.05rem;
             font-family: 'Lexend';
             font-weight: 500;
+            color: #000;
         }
 
         .user-name {
@@ -47,10 +48,14 @@
         justify-content: space-between;
         align-items: center;
         padding: .5rem .5rem;
-        background: #6a6a6a20;
-        border-radius: 5px;
-        
+        background: #fff;
+        border-radius: 15px;
+        border: 1px solid #ededed;
+        color: #000;
 
+        &:hover {
+            background: #f3f3f3;
+        }
     }
 
     .row-detail {

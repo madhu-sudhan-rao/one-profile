@@ -1,6 +1,6 @@
 ::ng-deep {
     .mat-toolbar-single-row {
-        background: #040519 !important;
+        background: #fff !important;
         display: flex;
         box-sizing: border-box;
         padding: 0 16px;
@@ -11,7 +11,7 @@
         border-bottom: .001px solid rgba(118, 118, 118, 0.312);
 
         span.app-title {
-            color: #fff;
+            color: #0041fa;
             font-style: 'Lexend';
             font-weight: 500;
             font-size: 1.8rem;
@@ -25,18 +25,20 @@
         -webkit-overflow-scrolling: touch;
         box-sizing: border-box;
         outline: 0;
-        border-radius: var(--mat-menu-container-shape);
-        background-color: #060c17 !important;
-        border: 1px solid rgba(255, 255, 255, 0.277);
+        border-radius: 10px !important;
+        background-color: #fff !important;
+        border: 1px solid #ededed;
+        color: #191919;
         will-change: transform, opacity;
     }
 
     .mat-mdc-menu-content {
-        padding: 4px 0 !important;
+        padding: 4px 4px !important;
     }
 
     .mat-mdc-menu-item {
         min-height: 40px !important;
+        border-radius: 8px;
     }
 
     .mat-mdc-menu-content .mat-mdc-menu-item .mat-mdc-menu-item-text {
@@ -49,7 +51,7 @@
         font-size: var(--mat-menu-item-label-text-size);
         letter-spacing: var(--mat-menu-item-label-text-tracking);
         font-weight: 400 !important;
-        color: #acacac !important;
+        color: #222222 !important;
     }
 }
 

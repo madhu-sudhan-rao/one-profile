@@ -10,6 +10,11 @@ import {MatBottomSheetModule} from '@angular/material/bottom-sheet';
 import {MatListModule} from '@angular/material/list';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatMenuModule} from '@angular/material/menu';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import {MatSelectModule} from '@angular/material/select';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 
 
 const MATERIAL_UI_COMPONENTS : any[]= [
@@ -22,7 +27,12 @@ const MATERIAL_UI_COMPONENTS : any[]= [
   MatBottomSheetModule,
   MatListModule,
   MatSidenavModule,
-  MatMenuModule
+  MatMenuModule,
+  MatFormFieldModule,
+  MatInputModule,
+  MatSelectModule,
+  MatDatepickerModule,
+  MatNativeDateModule
 ]
 
 

@@ -6,6 +6,10 @@ import { FeatureCardComponent } from './feature-card/feature-card.component';
 import { ButtonComponent } from './button/button.component';
 import { AlertMessageComponent } from './alert-message/alert-message.component';
 import { ListComponent } from './list/list.component';
+import { TextInputComponent } from './text-input/text-input.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { SelectListComponent } from './select-list/select-list.component';
+import { CalendarInputComponent } from './calendar-input/calendar-input.component';
 
 
 
@@ -15,18 +19,25 @@ import { ListComponent } from './list/list.component';
     FeatureCardComponent,
     ButtonComponent,
     AlertMessageComponent,
-    ListComponent
+    ListComponent,
+    TextInputComponent,
+    SelectListComponent,
+    CalendarInputComponent
   ],
   imports: [
     CommonModule,
-    MaterialUiModule
+    MaterialUiModule,
+    ReactiveFormsModule
   ],
   exports: [
     HeaderComponent,
     FeatureCardComponent,
     ButtonComponent,
     AlertMessageComponent,
-    ListComponent
+    ListComponent,
+    TextInputComponent,
+    SelectListComponent,
+    CalendarInputComponent
   ]
 })
 export class ComponentModule { }
