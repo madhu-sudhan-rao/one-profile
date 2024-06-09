@@ -2,66 +2,14 @@
 <div class="details-page">
   @if(noDetailsView) {
     <ng-container>
-      <div class="no-data-card">
-
-          <div class="empty-text">Looks like you haven't added your details...</div>
-        <div class="add-details-button">
-          <app-button
-            [buttonText]="'Add Details'"
-            [fullButton]="true"
-            (onButtonClick)="addDetails()"
-          ></app-button>
-        </div>
-      </div>
+      <app-empty-profile-details-view></app-empty-profile-details-view>
     </ng-container>
   }
-  <div class="details-card" *ngIf="!noDetailsView">
-    <div class="card-header">
-        <div class="usernames">
-            <div class="user-real-name">{{ user.realName }}</div>
-            <div class="user-name">{{ user.userName }}</div>
-        </div>
-        <div class="share-button">
-          <app-button
-            [fullButton]="true"
-            buttonText="Share"
-            buttonIcon="share"
-            styleClass="share-button"
-            (onButtonClick)="openShareOptions()"
-          ></app-button>
-        </div>
-    </div>
+
+  <div class="user-names-card-section" *ngIf="!noDetailsView">
+    <app-user-name-card [user]="user" ></app-user-name-card>
   </div>
-  <div class="user-details">
-    <div class="user-detail-row" *ngFor="let detail of user.details">
-        <div class="row-detail">
-            <div class="row-icon">
-              <span><i [classList]="detail.icon"></i></span>
-              <mat-icon *ngIf="detail.icon === 'snapchat'">{{ detail.icon }}</mat-icon>
-            </div>
-            <div class="row-value">
-                <div>{{ detail.value }}</div>
-            </div>
-        </div>
-        <div class="row-actions">
-        <div *ngIf="detail.url">
-                <a [href]="detail.url" target="_blank">
-                    <app-button
-                      [actionButton]="true"
-                      iconName="open_in_new"
-                      styleClass="action-button"
-                    ></app-button>
-                  </a>
-        </div>
-            <div>
-                <app-button
-                    [actionButton]="true"
-                    iconName="content_copy"
-                    styleClass="action-button"
-                    (onButtonClick)="copyURL(detail.url || detail.value)"
-                ></app-button>
-            </div>
-        </div>
-    </div>
+  <div class="user-details-section">
+    <app-user-details [user]="user"></app-user-details>
   </div>
 </div>

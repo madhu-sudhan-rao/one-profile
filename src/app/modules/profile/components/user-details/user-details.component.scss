@@ -1,0 +1,64 @@
+
+.user-details {
+    padding: 1rem 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    
+    .user-detail-row {
+        min-width: 95%;
+        max-width: 95%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: .5rem .5rem;
+        background: #fff;
+        border-radius: 15px;
+        border: 1px solid #ededed;
+        color: #000;
+
+        &:hover {
+            background: #f3f3f3;
+        }
+    }
+
+    .row-detail {
+        display: flex;
+        gap: 1rem;
+
+        .row-value {
+            font-size: .81rem;
+            font-family: 'Work Sans';
+        }
+    }
+
+    .row-actions {
+        display: flex;
+        gap: .81rem;
+    }
+
+}
+
+::ng-deep {
+
+    .row-icon {
+        display: flex;
+
+        span {
+            color: #44474e;
+
+            .pi {
+                padding-left: 4px;
+                padding-top: 5px;
+            }
+
+        }
+
+        .mat-icon {
+            font-size: 1.5rem;
+            color: #44474e;
+        }
+    }
+}

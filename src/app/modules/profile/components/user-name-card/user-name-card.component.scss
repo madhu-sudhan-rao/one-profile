@@ -1,0 +1,30 @@
+.details-card {
+    border: 1px solid #ededed;
+    padding: 1.25rem;
+    border-radius: 20px;
+    min-width: 90%;
+    max-width: 100%;
+}
+
+.card-header {
+    background-color: none;
+    display: flex;
+    justify-content: space-between;
+
+    .usernames {
+        display: flex;
+        flex-direction: column;
+
+        .user-real-name {
+            font-size: 1.05rem;
+            font-family: 'Lexend';
+            font-weight: 500;
+            color: #000;
+        }
+
+        .user-name {
+            font-size: 0.85rem;
+            color: #b5b5b5;
+        }
+    }
+}

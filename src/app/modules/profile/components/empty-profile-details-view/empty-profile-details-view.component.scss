@@ -1,0 +1,17 @@
+.no-data-card {
+    padding: 2rem 2rem;
+    border: 1px solid #ededed;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    width: max-content;
+    background: #f5f5f53e;
+    
+    .empty-text {
+        font-size: 1rem;
+        font-weight: 500;
+        color: #a3a3a3;
+    }
+}

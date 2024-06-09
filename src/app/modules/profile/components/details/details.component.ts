@@ -1,9 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { BottomSheetService } from '../../../../shared/services/bottom-sheet.service';
-import { UtilityService } from '../../../../shared/services/utility.service';
-import { BottomSheetComponent } from '../bottom-sheet/bottom-sheet.component';
 import { User, UserDetails } from '../../models/user.model';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-details',
@@ -18,8 +14,6 @@ export class DetailsComponent implements OnInit{
     details: []
   };
   noDetailsView: boolean = false;
-
-  constructor(private utilityService: UtilityService, private bottomSheetService: BottomSheetService, private router: Router){}
 
   ngOnInit(): void {
     const userDetailsString = localStorage.getItem('user');
@@ -48,15 +42,7 @@ export class DetailsComponent implements OnInit{
     }
   }
 
-  copyURL(url: string) {
-    this.utilityService.copyToClipboard(url);
-  }
 
-  openShareOptions() {
-    this.bottomSheetService.openBottomSheet(BottomSheetComponent)    
-  }
 
-  addDetails() {
-    this.router.navigate(['/edit-profile']);
-  }
+
 }
